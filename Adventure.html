@@ -44,6 +44,12 @@ background-image:url("https://jiayuemeng.github.io/Twine-Project-Adventure/image
 background-repeat: no-repeat;
 background-size:cover;
 }
+
+tw-story[tags~="城堡"] {
+background-image:url("https://jiayuemeng.github.io/Twine-Project-Adventure/images/城堡.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="bush" color="green"></tw-tag>,<tw-tag name="road" color="orange"></tw-tag>,<tw-tag name="choice" color="blue"></tw-tag>,<tw-tag name="diverge" color="yellow"></tw-tag>,<tw-tag name="草地摸龙" color="purple"></tw-tag>,<tw-tag name="悬崖摸龙" color="red"></tw-tag><tw-passagedata pid="1" name="冒险开始" tags="choice" position="403,173.5" size="100,100">
 叮叮！恭喜勇士阿敏成功升级至22级！
 你接到一个新的任务！
@@ -109,7 +115,9 @@ background-size:cover;
 
 (if:$friend is 0)[获得(text-colour:#bac8ff)[两位朋友]NPC，]获得智慧女神的(text-colour:#ffdb2f)[金苹果]。
 
-&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/金苹果.jpg&quot; style=&quot;width:400px;height:400px;&quot;&gt;</tw-passagedata><tw-passagedata pid="10" name="放松玩乐获得朋友" tags="road" position="135,925.5" size="100,100">你和两位英雄在城里好好放松了一阵，并和她们成为了好朋友。她们听说你要回到家乡打败巨龙，决定跟你一同前往。恭喜你获得两位朋友NPC!
+&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/金苹果.jpg&quot; style=&quot;width:400px;height:400px;&quot;&gt;
+(set: $friend to it + 1)
+(set: $wise to it + 1)</tw-passagedata><tw-passagedata pid="10" name="放松玩乐获得朋友" tags="road" position="135,925.5" size="100,100">你和两位英雄在城里好好放松了一阵，并和她们成为了好朋友。她们听说你要回到家乡打败巨龙，决定跟你一同前往。恭喜你获得两位朋友NPC!
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/粤菜.jpg&quot; style=&quot;width:600px;height:400px;&quot;&gt;
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/米线合照.jpg&quot; style=&quot;width:600px;height:400px;&quot;&gt;
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/小郡肝.jpg&quot; style=&quot;width:300px;height:300px;&quot;&gt;    &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/肥牛.jpg&quot; style=&quot;width:300px;height:300px;&quot;&gt;
@@ -145,50 +153,20 @@ background-size:cover;
 龙注意到了你，正在愤怒的它朝你喷火，你举起武器迎战。
 
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/打龙3d.png&quot; style=&quot;width:600px;height:400px;&quot;&gt;
-(if:$child is true)[(t8n-depart:&quot;blur&quot;)+(t8n-time:1s)[在朋友的帮助下，经过一番鏖战，龙被打败了。最后时刻，它突然表示它很羡慕你有一起出生入死的朋友，因为它的朋友都被勇士猎杀了，所以它已经孤单快几百年了。最后一刻，它把最珍贵的龙鳞托付给了你。
-
-原来世界上的忧愁和烦恼都会汇集到龙这里，因此龙的鳞片越来越沉重，而传说中最珍贵的龙鳞里蕴含着化解世上所有忧愁和烦恼的力量，是龙身上最神秘的宝藏。
-
-恭喜你！因为你的勇敢和与朋友一路上互相陪伴，你获得了最珍贵的龙鳞和能够化解所有忧愁和烦恼的力量！希望每一年的烦恼，你都可以勇敢面对并打倒它们~ 最后，无论你是什么样的人，无论你选择什么，我们都是你的朋友，陪伴着你，支持你和爱着你。
-
-阿敏，21岁生日快乐！！！]]
-(else-if:$friend &gt;= 1)[在朋友的帮助下，经过一番鏖战，龙被打败了。最后时刻，它突然表示它很羡慕你有一起出生入死的朋友，因为它的朋友都被勇士猎杀了，所以它已经孤单快几百年了。最后一刻，它把最珍贵的龙鳞托付给了你。
-
-原来世界上的忧愁和烦恼都会汇集到龙这里，因此龙的鳞片越来越沉重，而传说中最珍贵的龙鳞里蕴含着化解世上所有忧愁和烦恼的力量，是龙身上最神秘的宝藏。
-
-恭喜你！因为你的勇敢和与朋友一路上互相陪伴，你获得了最珍贵的龙鳞和能够化解所有忧愁和烦恼的力量！希望每一年的烦恼，你都可以勇敢面对并打倒它们~ 最后，无论你是什么样的人，无论你选择什么，我们都是你的朋友，陪伴着你，支持你和爱着你。
-
-阿敏，21岁生日快乐！！！]
-(else-if:$wise is 3)[(t8n-depart:&quot;fade-right&quot;)+(t8n-time:1s)[这时，你背包里来自智慧女神的三个苹果突然开始闪耀，它们漂浮起来融合成了智慧苹果。你耳边响起了来自女神的提示，原来龙的弱点在翅膀根部，轻轻击打就会使其全身麻痹。因此，在智慧女神的帮助下，你顺利打败了龙，获得了最珍贵的龙鳞。
-
-原来世界上的忧愁和烦恼都会汇集到龙这里，因此龙的鳞片越来越沉重，而传说中最珍贵的龙鳞里蕴含着化解世上所有忧愁和烦恼的力量，是龙身上最神秘的宝藏。
-
-恭喜你！因为你的谨慎和智慧，你获得了最珍贵的龙鳞和能够化解所有忧愁和烦恼的力量！希望每一年的烦恼，你都可以用智慧打倒它们~ 最后，无论你是什么样的人，无论你选择什么，我们都是你的朋友，陪伴着你，支持你和爱着你。
-
-阿敏，21岁生日快乐！！！]]</tw-passagedata><tw-passagedata pid="14" name="告诉龙小孩" tags="草地摸龙" position="1,1374.5" size="100,100">(set: $friend to it + 1)
+(if:$child is true)[(t8n-depart:&quot;blur&quot;)+(t8n-time:1s)[在朋友的帮助下，经过一番鏖战，龙被打败了。最后时刻，它突然表示它很羡慕你有一起出生入死的朋友，因为它的朋友都被勇士猎杀了，所以它已经孤单快几百年了。(t8n-time:1s)[[最后一刻，它把最珍贵的龙鳞托付给了你。-&gt;结局]]]]
+(else-if:$wise is 3)[(t8n-depart:&quot;fade-right&quot;)+(t8n-time:1s)[这时，你背包里来自智慧女神的三个苹果突然开始闪耀，它们漂浮起来融合成了智慧苹果。你耳边响起了来自女神的提示，原来龙的弱点在翅膀根部，轻轻击打就会使其全身麻痹。(t8n-time:1s)[[因此，在智慧女神的帮助下，你顺利打败了龙，获得了最珍贵的龙鳞。-&gt;结局]]]]
+(else:)[在朋友的帮助下，经过一番鏖战，龙被打败了。最后时刻，它突然表示它很羡慕你有一起出生入死的朋友，因为它的朋友都被勇士猎杀了，所以它已经孤单快几百年了。(t8n-time:1s)[[最后一刻，它把最珍贵的龙鳞托付给了你。-&gt;结局]]]</tw-passagedata><tw-passagedata pid="14" name="告诉龙小孩" tags="草地摸龙" position="1,1374.5" size="100,100">(set: $friend to it + 1)
 亲和度+1！亲和度达到三级！
 
-巨龙一听到孩子的消息，停下了攻击。由于你的亲和力等级非常高，对动物有莫名的亲和力，所以龙相信了你。在你的指引下，龙顺利找回了孩子。心怀感恩的龙将自己最珍贵的鳞片赠送给你。
+巨龙一听到孩子的消息，停下了攻击。由于你的亲和力等级非常高，对动物有莫名的亲和力，所以龙相信了你。在你的指引下，龙顺利找回了孩子。(t8n-time:1s)[[心怀感恩的龙将自己最珍贵的鳞片赠送给你。-&gt;结局]]
 
-&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/龙鳞.jpg&quot; style=&quot;width:200px;height:200px;&quot;&gt;
-
-原来世界上的忧愁和烦恼都会汇集到龙这里，因此龙的鳞片越来越沉重，而传说中最珍贵的龙鳞里蕴含着化解世上所有忧愁和烦恼的力量，是龙身上最神秘的宝藏。
-
-恭喜你！因为你的善良和亲和力，获得了最珍贵的龙鳞和能够化解所有忧愁和烦恼的力量！希望每一年的烦恼，你都可以用自己的善良和亲和力打倒/忘记它们~ 最后，无论你是什么样的人，选择什么，我们都是你的朋友，陪伴着你，支持你和爱着你。
-
-阿敏，21岁生日快乐！！！</tw-passagedata><tw-passagedata pid="15" name="不告诉龙小孩" tags="草地摸龙" position="135,1374.5" size="100,100">龙注意到了你，正在愤怒的它朝你喷火，你举起武器迎战。
+&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/龙鳞.jpg&quot; style=&quot;width:200px;height:200px;&quot;&gt;</tw-passagedata><tw-passagedata pid="15" name="不告诉龙小孩" tags="草地摸龙" position="135,1374.5" size="100,100">龙注意到了你，正在愤怒的它朝你喷火，你举起武器迎战。
 
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/打龙3d.png&quot; style=&quot;width:600px;height:400px;&quot;&gt;
 
-在朋友的帮助下，经过一番鏖战，龙被打败了。最后时刻，它突然表示它很羡慕你有一起出生入死的朋友，因为它的朋友都被勇士猎杀了，所以它已经孤单快几百年了。最后一刻，它把最珍贵的龙鳞托付给了你。
+在朋友的帮助下，经过一番鏖战，龙被打败了。最后时刻，它突然表示它很羡慕你有一起出生入死的朋友，因为它的朋友都被勇士猎杀了，所以它已经孤单快几百年了。(t8n-time:1s)[[最后一刻，它把最珍贵的龙鳞托付给了你。-&gt;结局]]
 
-&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/龙鳞.jpg&quot; style=&quot;width:400px;height:400px;&quot;&gt;
-
-原来世界上的忧愁和烦恼都会汇集到龙这里，因此龙的鳞片越来越沉重，而传说中最珍贵的龙鳞里蕴含着化解世上所有忧愁和烦恼的力量，是龙身上最神秘的宝藏。
-
-恭喜你！因为你的勇敢和与朋友一路上互相陪伴，你获得了最珍贵的龙鳞和能够化解所有忧愁和烦恼的力量！希望每一年的烦恼，你都可以勇敢面对并打倒它们~ 最后，无论你是什么样的人，无论你选择什么，我们都是你的朋友，陪伴着你，支持你和爱着你。
-
-阿敏，21岁生日快乐！！！</tw-passagedata><tw-passagedata pid="16" name="铁匠铺" tags="road" position="732,1050.5" size="100,100">你们一行人路过一个铁匠铺，可以用红宝石升级武器。你选择：
+&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/龙鳞.jpg&quot; style=&quot;width:400px;height:400px;&quot;&gt;</tw-passagedata><tw-passagedata pid="16" name="铁匠铺" tags="road" position="732,1050.5" size="100,100">你们一行人路过一个铁匠铺，可以用红宝石升级武器。你选择：
 
 (text-colour:#e87355)[(t8n-depart:&quot;slide-up&quot;)+(t8n-time:1s)[[升级-&gt;升级武器]]]
 
@@ -202,7 +180,7 @@ background-size:cover;
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/金币.jpg&quot; style=&quot;width:600px;height:400px;&quot;&gt;</tw-passagedata><tw-passagedata pid="19" name="强盗杀出" tags="bush" position="374,609.5" size="100,100">突然一群强盗从路边杀出，原来他们埋伏已久，为了抢钱。你用屠龙破刀奋力抵抗，但由于刀实在太破，寡不敌众。正在要快没力气的时候，(if: $friend is 1)[[[两位朋友跟强盗打了起来。-&gt;赶跑强盗]]](else:)[(text-style:&quot;double-underline&quot;)[(text-colour:#b49378)[(t8n-depart:&quot;slide-down&quot;)+(t8n-time:1s)[[两位英雄从天而降-&gt;赶跑强盗]]]]。]</tw-passagedata><tw-passagedata pid="20" name="小孟红宝石" tags="bush" position="695,463.5" size="100,100">小孟认出来那是(text-colour:#c75138)[红宝石]，叫你快去捡。[[你知道这个红宝石可以卖掉换钱也可以在铁匠铺将屠龙破刀强化成为屠龙宝刀，你感叹运气真不错！-&gt;强盗杀出2]]
 
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/红宝石.png&quot; style=&quot;width:600px;height:400px;&quot;&gt;</tw-passagedata><tw-passagedata pid="21" name="强盗杀出2" tags="bush" position="756,630.5" size="100,100">(set: $ruby to true)
-没想到你摸到宝石后，身体突然开始失去力气，两位朋友冲上前查看情况。这时突然草丛中杀出两个强盗！原来红宝石是他们放的诱饵，他们已经在此地埋伏已久。红宝石上涂满了迷药，你摸了红宝石之后感觉(text-colour:#a9e34b)[(text-style:&quot;blur&quot;)[力气迅速消失，身体渐渐瘫软，视线也慢慢模糊]]。(text-colour:#ffd8a8)[(text-style:&quot;outline&quot;,&quot;rumble&quot;)[(t8n-time:1s)[[两位朋友跟强盗打了起来。-&gt;赶跑强盗]]]]</tw-passagedata><tw-passagedata pid="22" name="武力结局" tags="悬崖摸龙" position="540,1340.5" size="100,100">你们一行人经历千辛万苦，终于找到龙的踪迹。它看起来心情不太好，挥舞金色的翅膀在到处喷火。
+没想到你摸到宝石后，身体突然开始失去力气，两位朋友冲上前查看情况。这时突然草丛中杀出两个强盗！原来红宝石是他们放的诱饵，他们已经在此地埋伏已久。红宝石上涂满了迷药，你摸了红宝石之后感觉(text-colour:#a9e34b)[(text-style:&quot;blur&quot;)[力气迅速消失，身体渐渐瘫软，视线也慢慢模糊]]。(text-colour:#ffd8a8)[(text-style:&quot;outline&quot;,&quot;rumble&quot;)[(t8n-time:1s)[[两位朋友跟强盗打了起来。-&gt;赶跑强盗]]]]</tw-passagedata><tw-passagedata pid="22" name="武力结局" tags="草地摸龙" position="540,1340.5" size="100,100">你们一行人经历千辛万苦，终于找到龙的踪迹。它看起来心情不太好，挥舞金色的翅膀在到处喷火。
 
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/龙喷火.png&quot; style=&quot;width:600px;height:400px;&quot;&gt;
 
@@ -214,7 +192,15 @@ background-size:cover;
 
 恭喜你！因为你的谨慎和强大的实力，你获得了最珍贵的龙鳞和能够化解所有忧愁和烦恼的力量！希望每一年的烦恼，你都可以用强大的实力打倒它们~ 最后，无论你是什么样的人，无论你选择什么，我们都是你的朋友，陪伴着你，支持你和爱着你。
 
-阿敏，21岁生日快乐！！!]</tw-passagedata></tw-storydata>
+阿敏，21岁生日快乐！！!]
+
+&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/九宫格.jpg&quot; style=&quot;width:600px;height:400px;&quot;&gt;</tw-passagedata><tw-passagedata pid="23" name="结局" tags="城堡" position="227,1570.5" size="100,100">&#39;&#39;(text-colour:#0d0700)[原来世界上的忧愁和烦恼都会汇集到龙这里，因此龙的鳞片越来越沉重，而传说中最珍贵的龙鳞里蕴含着化解世上所有忧愁和烦恼的力量，是龙身上最神秘的宝藏。
+
+恭喜你！因为你的善良和亲和力，获得了最珍贵的龙鳞和能够化解所有忧愁和烦恼的力量！希望每一年的烦恼，你都可以用自己的善良和亲和力打倒/忘记它们~ 最后，无论你是什么样的人，选择什么，我们都是你的朋友，陪伴着你，支持你和爱着你。
+
+阿敏，21岁生日快乐！！！]&#39;&#39;
+
+&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/九宫格.jpg&quot; style=&quot;width:600px;height:400px;&quot;&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
