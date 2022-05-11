@@ -69,9 +69,7 @@ background-size:cover;
 {(set: $friend to 0)}
 {(set: $ruby to false)}
 {(set: $child to false)}</tw-passagedata><tw-passagedata pid="2" name="武力" tags="diverge" position="255,323.5" size="100,100">(set: $power to it + 1)
-(text-colour:#0d0700)[恭喜你！武力值+1！初始菜刀升级成为屠龙破刀！]
-
-&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/破刀.jpg&quot; style=&quot;width:600px;height:400px;&quot;&gt;
+(text-colour:#0d0700)[恭喜你！武力值+1！你的武器被强化了一点点，但感觉升级还需要一个契机。]
 
 前进吧！前方草丛里你突然发现有个(text-style:&quot;blink&quot;)[(text-colour:#ff8787)+(bg:(gradient: 0, 0,#ffffff,0,#ffffff,1,#000000))[亮闪闪]]的东西，可能是宝藏也可能是陷阱，请问你要不要凑近探查？
 
@@ -103,7 +101,7 @@ background-size:cover;
 (text-rotate-x:33)+(text-rotate-y:337)[(text-colour:#ffa94d)[(t8n-depart:&quot;zoom&quot;)[[继续前进！-&gt;强盗]]]]</tw-passagedata><tw-passagedata pid="6" name="苹果1" tags="road" position="450,459.5" size="100,100">(set: $wise to it + 1)
 你继续前进，没有管草丛的异样。由于你非常谨慎，获得了智慧女神奖励的[[银苹果-&gt;强盗杀出]]。
 
-&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/银苹果.jpg&quot; style=&quot;width:500px;height:400px;&quot;&gt;</tw-passagedata><tw-passagedata pid="7" name="强盗" tags="bush" position="180,625.5" size="100,100">这时突然草丛中杀出两个强盗！原来红宝石是他们放的诱饵，他们已经在此地埋伏已久。红宝石上涂满了迷药，你摸了红宝石之后感觉力(text-colour:#a9e34b)[气迅速消失，身体渐渐瘫软，(text-style:&quot;blur&quot;)[视线也慢慢模糊]]。你看到强盗们向你走来，准备抢走你身上的钱袋。这时，突然(text-style:&quot;smear&quot;)+(text-colour:#a38269)+(t8n-depart:&quot;fade-down&quot;)[[两位英雄从天而降-&gt;赶跑强盗]]。
+&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/银苹果.jpg&quot; style=&quot;width:500px;height:400px;&quot;&gt;</tw-passagedata><tw-passagedata pid="7" name="强盗" tags="bush" position="180,625.5" size="100,100">这时突然草丛中杀出两个强盗！原来红宝石是他们放的诱饵，他们已经在此地埋伏已久。红宝石上涂满了迷药，你摸了红宝石之后感觉(text-colour:#a9e34b)[力气迅速消失，身体渐渐瘫软，(text-style:&quot;blur&quot;)[视线也慢慢模糊]]。你看到强盗们向你走来，准备抢走你身上的钱袋。这时，突然(text-style:&quot;smear&quot;)+(text-colour:#a38269)+(t8n-depart:&quot;fade-down&quot;)[[两位英雄从天而降-&gt;赶跑强盗]]。
 
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/元气骑士.jpg&quot; style=&quot;width:600px;height:400px;&quot;&gt;</tw-passagedata><tw-passagedata pid="8" name="赶跑强盗" tags="bush" position="180,775.5" size="100,100">一番塵站后，两位英雄帮你打败了强盗。(if: $ruby is true)[并从强盗身上搜到了迷药解药喂给你吃。]你很感激,你想邀请她们去最近的城池，请她们吃饭休息，但你兜里并没有那么多钱。所以你决定：
 
@@ -172,7 +170,7 @@ background-size:cover;
 
 (text-colour:#a5d8ff)[(t8n-depart:&quot;slide-down&quot;)+(t8n-time:1s)[[不升级-&gt;不升级武器]]]
 
-&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/铁匠铺.jpg&quot; style=&quot;width:600px;height:600px;&quot;&gt;</tw-passagedata><tw-passagedata pid="17" name="升级武器" tags="road" position="589,1196.5" size="100,100">(t8n-depart:&quot;blur&quot;)+(t8n-time:1s)[[恭喜你，屠龙破刀升级成为屠龙宝刀！-&gt;武力结局]]
+&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/铁匠铺.jpg&quot; style=&quot;width:600px;height:600px;&quot;&gt;</tw-passagedata><tw-passagedata pid="17" name="升级武器" tags="road" position="589,1196.5" size="100,100">(t8n-depart:&quot;blur&quot;)+(t8n-time:1s)[[恭喜你，你的菜刀升级成为屠龙宝刀！-&gt;武力结局]]
 
 &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/破刀.jpg&quot; style=&quot;width:300px;height:200px;&quot;&gt; ---&gt; &lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/宝刀.jpg&quot; style=&quot;width:300px;height:200px;&quot;&gt;
 (set: $power to it + 1)</tw-passagedata><tw-passagedata pid="18" name="不升级武器" tags="road" position="909,1214.5" size="100,100">(t8n-depart:&quot;flicker&quot;)+(t8n-time:1s)[[你保留着红宝石，可以换成金币以备不时之需。-&gt;不分烧饼]]
@@ -200,7 +198,9 @@ background-size:cover;
 
 阿敏，21岁生日快乐！！！]&#39;&#39;
 
-&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/九宫格.jpg&quot; style=&quot;width:600px;height:400px;&quot;&gt;</tw-passagedata></tw-storydata>
+&lt;img src=&quot;https://jiayuemeng.github.io/Twine-Project-Adventure/images/九宫格.jpg&quot; style=&quot;width:600px;height:400px;&quot;&gt;
+
+P.S 想再玩一次？试试刷新页面吧！</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
